@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  damarisbot:
+    build: .
+    container_name: damaris-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./sessions:/app/sessions  # 🔹 salvar sessão do WhatsApp
+      - ./duvidas.json:/app/duvidas.json
+    network_mode: host  # 🔹 necessário pro WhatsApp Web funcionar corretamente
