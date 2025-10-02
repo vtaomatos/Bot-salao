@@ -256,7 +256,7 @@ function ignorarMensagem(message) {
     if (!message.body) return true;
     if (message.from.endsWith("@g.us")) return true;
     if (message.isGroupMsg) return true;
-    if (["saiu", "entrou", "chamada", "bloqueou"].some(p => message.body.toLowerCase().includes(p))) return true;
+    // if (["saiu do grupo", "entrou no grupo", "chamada"].some(p => message.body.toLowerCase().includes(p))) return true;
     return false;
 }
 
