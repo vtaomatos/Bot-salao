@@ -8,4 +8,6 @@ services:
     volumes:
       - ./sessions:/app/sessions  # 🔹 salvar sessão do WhatsApp
       - ./duvidas.json:/app/duvidas.json
+      - ./tokens:/app/tokens
+    entrypoint:  ["/app/entrypoint.sh"]
     network_mode: host  # 🔹 necessário pro WhatsApp Web funcionar corretamente

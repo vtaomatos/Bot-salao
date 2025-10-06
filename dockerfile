@@ -1,8 +1,22 @@
 # Usar Node Alpine para imagem leve
-FROM node:20-alpine
+FROM node:20-bullseye-slim
+
 
 # Instalar Chromium e dependências necessárias
-RUN apk add --no-cache chromium chromium-chromedriver nss freetype harfbuzz ca-certificates ttf-freefont
+RUN apt-get update && apt-get install -y \
+    apk add --no-cache \
+    chromium \
+    chromium-chromedriver \
+    nss \
+    freetype \
+    freetype-dev \
+    harfbuzz \
+    ca-certificates \
+    ttf-freefont \
+    nodejs \
+    npm \
+    yarn \
+    bash
 
 # Diretório da aplicação
 WORKDIR /app

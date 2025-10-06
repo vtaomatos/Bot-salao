@@ -286,7 +286,8 @@ async function processarBuffer(client, from) {
 venom.create({
     session: 'bot-salao',
     multidevice: true,
-    headless: true
+    headless: true,
+    browserArgs: ['--no-sandbox', '--disable-dev-shm-usage'],
 })
     .then(client => {
         client.onMessage(async message => {
