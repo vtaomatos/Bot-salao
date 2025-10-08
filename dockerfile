@@ -21,6 +21,10 @@ RUN apt-get update && apt-get install -y \
 # Diretório da aplicação
 WORKDIR /app
 
+RUN mkdir -p ./tokens/bot-salao \
+    chmod -R 755 ./tokens/bot-salao
+
+
 # Copiar e instalar dependências
 COPY package*.json ./
 RUN npm install
